@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Olde English Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/GUI.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ScrollsLabel" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 48.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 1 )
+text = "Scrolls Left:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollsCount" type="Label" parent="ScrollsLabel"]
+margin_left = 75.9143
+margin_top = -2.75365
+margin_right = 87.9143
+margin_bottom = 22.2464
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesLabel" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 28.0
+margin_right = 39.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "Lives Left:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesCount" type="Label" parent="LivesLabel"]
+margin_left = 75.9143
+margin_top = -3.15272
+margin_right = 87.9143
+margin_bottom = 21.8473
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedBar" type="ColorRect" parent="."]
+visible = false
+margin_left = 240.0
+margin_top = 7.0
+margin_right = 315.0
+margin_bottom = 17.0
+color = Color( 0, 0, 0, 0.431373 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlowBar" type="ColorRect" parent="SpeedBar"]
+visible = false
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 73.0
+margin_bottom = 8.0
+color = Color( 0.854902, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FastBar" type="ColorRect" parent="SpeedBar"]
+visible = false
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 73.0
+margin_bottom = 8.0
+color = Color( 0.0235294, 0.517647, 0.0235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="GameOver" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+margin_left = -37.0
+margin_top = -32.0
+margin_right = 373.0
+margin_bottom = 208.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverText" type="Label" parent="GameOver"]
+margin_left = 36.6797
+margin_top = 75.0
+margin_right = 356.68
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 3 )
+text = "You Died"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="Button" parent="GameOver/GameOverText"]
+margin_left = 129.896
+margin_top = 49.5987
+margin_right = 189.896
+margin_bottom = 74.5987
+custom_fonts/font = SubResource( 4 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="BarTimer" to="." method="_on_BarTimer_timeout"]
+[connection signal="pressed" from="GameOver/GameOverText/RestartButton" to="." method="_on_Button_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dark Fantasy Ambience.mp3-553bbbc6fed56e85baf92d6d0956016c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Dark Fantasy Ambience.mp3"
+dest_files=[ "res://.import/Dark Fantasy Ambience.mp3-553bbbc6fed56e85baf92d6d0956016c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

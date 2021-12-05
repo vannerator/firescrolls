@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Epic Dark Fantasy Battle.mp3-216f91e10f4c0afe74b9e270c72d4e9b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Epic Dark Fantasy Battle.mp3"
+dest_files=[ "res://.import/Epic Dark Fantasy Battle.mp3-216f91e10f4c0afe74b9e270c72d4e9b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
